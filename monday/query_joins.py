@@ -110,13 +110,13 @@ def get_item_by_id_query(ids):
 
 
 def update_item_query(board_id, item_id, column_id, value):
-    query = '''mutation
+    query = f'''mutation
         {
             change_column_value(
-                board_id: %s,
-                item_id: %s,
-                column_id: %s,
-                value: %s
+                board_id: {board_id},
+                item_id: {item_id},
+                column_id: {column_id},
+                value: {value}
             ) {
                 id
                 name
